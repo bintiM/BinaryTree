@@ -20,23 +20,34 @@ namespace BinaryTree
             bt.add(new Node(1), bt.root);
             bt.add(new Node(7), bt.root);
 
-            bt.printPreOrder();
-            Console.WriteLine();
-            Console.WriteLine("*********************************");
-            bt.printInOrder();
+            Console.WriteLine("Traversierungen");
 
-            Console.WriteLine();
-            Console.WriteLine("*********************************");
+            Console.WriteLine("PreOrder:");
+            bt.printPreOrder();
+            Console.WriteLine("\n*********************************");
+
+            Console.WriteLine("InOrder");
+            bt.printInOrder();
+            Console.WriteLine("\n*********************************");
+
+            Console.WriteLine("PostOrder");
             bt.printPostOrder();
-            Console.WriteLine();
-            Console.WriteLine("*********************************");
+            Console.WriteLine("\n*********************************");
+
+            Console.WriteLine("Max:");
             bt.max();
-            Console.WriteLine();
             Console.WriteLine("*********************************");
+
+            Console.WriteLine("Min:");
             bt.min();
+            Console.WriteLine("*********************************");
+
+
 
             #region Vergleiche
             int max = 5000000;
+
+            Console.WriteLine("\nVergleich zwischen Array und BinaryTree Suche mit " + max + " Elementen...");
 
             Stopwatch sW = new Stopwatch();
             sW.Start();
@@ -67,7 +78,7 @@ namespace BinaryTree
             sW.Stop();
             Console.WriteLine("habe fertig nach :\t\t" + sW.Elapsed);
 
-            //zu suchende Zahl
+            //zu suchende Zahl per Zufall ausgewählt
             int search = intArray[r.Next(0, max)];
 
             Console.WriteLine("Suche nach: " + search);
@@ -89,7 +100,7 @@ namespace BinaryTree
             sW.Restart();
             int stepsBT = binaryTree.searchInt(search);
             sW.Stop();
-            Console.WriteLine("Binärbaum: \t" + stepsBT + "Schritte \t" + sW.Elapsed);
+            Console.WriteLine("Binärbaum: \t" + stepsBT + " Schritte \t" + sW.Elapsed);
 
 
 
